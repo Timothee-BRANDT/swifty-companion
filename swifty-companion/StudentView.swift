@@ -20,7 +20,14 @@ struct StudentView: View {
             VStack(spacing: orientation.isLandscape ? 30 : 60) {
                 BasicInformationsView(user: user)
             }
+            .onDisappear {
+                resetUserData()
+            }
         }
+    }
+    
+    func resetUserData() {
+        user.data = nil
     }
     
     var projects: [Project] {
