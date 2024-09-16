@@ -2,7 +2,7 @@
 //  User.swift
 //  swifty-companion
 //
-//  Created by Timothée BRANDT on 13/09/2024.
+//  Created by Timothée BRANDT on 16/09/2024.
 //
 
 import Foundation
