@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct StudentView: View {
-    @Binding var loginSelected: String
-    @Binding var isShowingLoadingView: Bool
-    
     @State var projectsButtonSelected: Bool = true
     @State var achievementsButtonSelected: Bool = false
     @State var skillsButtonSelected: Bool = false
@@ -24,16 +21,11 @@ struct StudentView: View {
                 BasicInformationsView(user: user)
             }
         }
-        .onDisappear {
-            loginSelected = ""
-            isShowingLoadingView = false
-        }
     }
     
     var projects: [Project] {
         var projects: [Project] = []
         guard let allProjects: [Project] = user.data?.projects_users else {
-            print("Error: User data was not loaded")
             return projects
         }
         if (allProjects.count > 1) {
@@ -49,7 +41,6 @@ struct StudentView: View {
     var skills: [Skill] {
         var skills: [Skill] = []
         guard let cursus: [Progress] = user.data?.cursus_users else {
-            print("Error: User data was not loaded")
             return skills
         }
         if (cursus.count > 1) {

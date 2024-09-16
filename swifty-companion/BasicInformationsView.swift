@@ -17,7 +17,7 @@ struct BasicInformationsView: View {
                     url: URL(string: user.data!.image.link!),
                     content: { image in
                         image.resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(contentMode: .fill)
                             .frame(maxWidth: 100, maxHeight: 100)
                             .clipShape(Circle())
                     },
@@ -29,10 +29,11 @@ struct BasicInformationsView: View {
                 HStack(spacing: 40) {
                     VStack(alignment: .leading){
                         Text(login)
-                            .foregroundColor(.white)
+                            .foregroundColor(.mainBlue)
                             .bold()
+//                            .textCase(.uppercase)
                         Text(location)
-                            .foregroundColor(.white)
+                            .foregroundColor(.mainBlue)
                             .bold()
                     }
                 }
@@ -79,6 +80,5 @@ struct BasicInformationsView: View {
 struct BasicInformationsView_Previews: PreviewProvider {
     static var previews: some View {
         BasicInformationsView(user: UserAPI.mockUser)
-            .background(Color.black)
     }
 }
