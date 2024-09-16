@@ -29,11 +29,9 @@ struct ContentView: View {
                                     print("Token is not available")
                                     return
                                 }
-                                
                                 await user.fetchData(token: tokenString, login: loginSelected)
                                 
                                 if let userData = user.data, !userData.login.isEmpty {
-                                    print(userData.login)
                                     showMessage = false
                                 } else {
                                     message = "User not found"
@@ -59,6 +57,12 @@ struct ContentView: View {
                             .cornerRadius(10)
                     }
                     .padding(.horizontal)
+                    
+                    VStack (spacing: 100){
+                        if let userData = user.data, !userData.login.isEmpty {
+                            BasicInformationsView(user: user)
+                        }
+                    }
                     
                     if showMessage {
                         Text(message)

@@ -12,6 +12,7 @@ struct User: Codable {
     var image: Image
     var location: String?
     var projects_users: [Project]
+    var cursus_users: [Progress]
 }
 
 struct Progress: Codable {
