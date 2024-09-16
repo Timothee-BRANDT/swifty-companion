@@ -7,13 +7,12 @@
 
 import Foundation
 
-
 private var path: String {
     get {
-        guard let filePath = Bundle.main.path(forResource: "API_KEYS", ofType: "plist") else {
+        guard let path = Bundle.main.path(forResource: "API_KEYS", ofType: "plist") else {
             fatalError("Couldn't find file 'API_KEYS.plist'.")
         }
-        return filePath
+        return path
     }
 }
 
@@ -37,10 +36,9 @@ private var UID: String {
     }
 }
 
-class API: ObservableObject {
+class TokenAPI: ObservableObject {
     @Published var value: Token?
-    @Published var isGenerated: Bool = false
-    
+
     func generateToken() async throws -> Token? {
         let url = URL(string: "https://api.intra.42.fr/oauth/token")
         let body = "grant_type=client_credentials&client_id=\(UID)&client_secret=\(secret)"
@@ -48,7 +46,7 @@ class API: ObservableObject {
             print("Error: URL is empty")
             return nil
         }
-        
+
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         request.httpBody = body.data(using: String.Encoding.utf8)
@@ -56,12 +54,11 @@ class API: ObservableObject {
         let decoder = JSONDecoder()
         return try decoder.decode(Token.self, from: data)
     }
-    
+
     @MainActor
-    func getToken () async {
+    func getToken() async {
             do {
                 value = try await generateToken()
-                isGenerated = true
             } catch {
                 print("Error: Couldn't generate a token")
             }

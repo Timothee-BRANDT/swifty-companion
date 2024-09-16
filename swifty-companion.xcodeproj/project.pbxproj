@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220C7BB62C94224A0098B094 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C7BB52C94224A0098B094 /* User.swift */; };
 		22C1AF752C9325BB005D431F /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1AF742C9325BB005D431F /* Tokens.swift */; };
 		22C1AF782C93269D005D431F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1AF772C93269D005D431F /* Token.swift */; };
 		22C1AF7A2C9326D4005D431F /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1AF792C9326D4005D431F /* Student.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220C7BB52C94224A0098B094 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22C1AF742C9325BB005D431F /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		22C1AF772C93269D005D431F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		22C1AF792C9326D4005D431F /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				22C1AF742C9325BB005D431F /* Tokens.swift */,
+				220C7BB52C94224A0098B094 /* User.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				22F1F7672C92E81D00BC142F /* ContentView.swift in Sources */,
 				22F1F7652C92E81D00BC142F /* swifty_companionApp.swift in Sources */,
+				220C7BB62C94224A0098B094 /* User.swift in Sources */,
 				22C1AF752C9325BB005D431F /* Tokens.swift in Sources */,
 				22C1AF7A2C9326D4005D431F /* Student.swift in Sources */,
 				22C1AF782C93269D005D431F /* Token.swift in Sources */,

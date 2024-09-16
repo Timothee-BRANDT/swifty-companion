@@ -7,18 +7,21 @@
 
 import Foundation
 
-struct Student: Codable {
+struct User: Codable {
     var login: String
-    var image: String?
+    var image: Image
     var location: String?
-    var cursus_users: [Progression]
-    var studentProjects: [Project]
+    var projects_users: [Project]
 }
 
-struct Progression: Codable {
+struct Progress: Codable {
     var grade: String?
     var level: Double
     var skills: [Skill]
+}
+
+struct Image: Codable {
+    var link: String?
 }
 
 struct Skill: Codable, Identifiable {
@@ -31,7 +34,12 @@ struct Project: Codable, Identifiable {
     var id: Int
     var final_mark: Int?
     var status: String
-    var name: String
+    var project: ProjectName
     var cursus_ids: [Int]
     var marked_at: String?
 }
+
+struct ProjectName: Codable {
+    var name: String
+}
+
