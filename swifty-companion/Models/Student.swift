@@ -15,10 +15,11 @@ struct User: Codable {
     var cursus_users: [Progress]
 }
 
-struct Progress: Codable {
+struct Progress: Codable, Identifiable {
+    var id: Int
     var grade: String?
     var level: Double
-    var skills: [Skill]
+    var skills: [Skill]?
 }
 
 struct Image: Codable {

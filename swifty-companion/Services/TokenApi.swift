@@ -43,7 +43,6 @@ class TokenAPI: ObservableObject {
         let url = URL(string: "https://api.intra.42.fr/oauth/token")
         let body = "grant_type=client_credentials&client_id=\(UID)&client_secret=\(secret)"
         guard let requestUrl = url else {
-            print("Error: URL is empty")
             return nil
         }
 

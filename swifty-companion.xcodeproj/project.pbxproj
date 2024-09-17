@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		220C31A22C983AE200AF5C87 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C31A12C983AE200AF5C87 /* StudentView.swift */; };
 		220C31A42C983B7300AF5C87 /* BasicInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C31A32C983B7300AF5C87 /* BasicInformationsView.swift */; };
-		220C31A82C98402800AF5C87 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C31A72C98402800AF5C87 /* Mock.swift */; };
 		223DDB992C9837FE0068CA25 /* TokenApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223DDB982C9837FE0068CA25 /* TokenApi.swift */; };
 		22A20BF82C98359F0062DB66 /* swifty_companionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A20BF72C98359F0062DB66 /* swifty_companionApp.swift */; };
 		22A20BFA2C98359F0062DB66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A20BF92C98359F0062DB66 /* ContentView.swift */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		220C31A12C983AE200AF5C87 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
 		220C31A32C983B7300AF5C87 /* BasicInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInformationsView.swift; sourceTree = "<group>"; };
-		220C31A72C98402800AF5C87 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		223DDB982C9837FE0068CA25 /* TokenApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenApi.swift; sourceTree = "<group>"; };
 		22A20BF42C98359F0062DB66 /* swifty-companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A20BF72C98359F0062DB66 /* swifty_companionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_companionApp.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				22A20BF92C98359F0062DB66 /* ContentView.swift */,
 				220C31A12C983AE200AF5C87 /* StudentView.swift */,
 				220C31A32C983B7300AF5C87 /* BasicInformationsView.swift */,
-				220C31A72C98402800AF5C87 /* Mock.swift */,
 			);
 			path = "swifty-companion";
 			sourceTree = "<group>";
@@ -307,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A20C252C9836430062DB66 /* Token.swift in Sources */,
-				220C31A82C98402800AF5C87 /* Mock.swift in Sources */,
 				22A20C2B2C9836870062DB66 /* User.swift in Sources */,
 				22A20BFA2C98359F0062DB66 /* ContentView.swift in Sources */,
 				22A20BF82C98359F0062DB66 /* swifty_companionApp.swift in Sources */,

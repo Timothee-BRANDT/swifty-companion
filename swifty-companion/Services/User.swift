@@ -15,7 +15,6 @@ class UserAPI: ObservableObject {
         let baseURL = "https://api.intra.42.fr/v2/users/" + login.lowercased()
         let finalURL = URL(string: baseURL)
         guard let requestUrl = finalURL else {
-            print("Error: URL is empty")
             return nil
         }
         var request = URLRequest(url: requestUrl)
@@ -34,7 +33,6 @@ class UserAPI: ObservableObject {
         let finalURL = URL(string: baseURL)
         
         guard let requestUrl = finalURL else {
-            print("Error: URL is empty")
             return nil
         }
         
