@@ -10,7 +10,7 @@ import Foundation
 private var path: String {
     get {
         guard let path = Bundle.main.path(forResource: "API_KEYS", ofType: "plist") else {
-            fatalError("Couldn't find file 'API_KEYS.plist'.")
+            fatalError("API_KEYS.plist not found")
         }
         return path
     }
@@ -20,7 +20,7 @@ private var secret: String {
     get {
         let plist = NSDictionary(contentsOfFile: path)
         guard let secret = plist?.object(forKey: "SECRET") as? String else {
-            fatalError("Couldn't find key 'SECRET' in 'API_KEYS.plist'.")
+            fatalError("SECERT not found")
         }
         return secret
     }
@@ -30,7 +30,7 @@ private var UID: String {
     get {
         let plist = NSDictionary(contentsOfFile: path)
         guard let uid = plist?.object(forKey: "UID") as? String else {
-            fatalError("Couldn't find key 'UID' in 'API_KEYS.plist'.")
+            fatalError("UID not found")
         }
         return uid
     }
@@ -59,7 +59,7 @@ class TokenAPI: ObservableObject {
             do {
                 value = try await generateToken()
             } catch {
-                print("Error: Couldn't generate a token")
+                print("Token generation failed")
             }
     }
 }

@@ -63,11 +63,11 @@ struct StudentView: View {
                             Text("Status: \(project.status)")
                                 .font(.subheadline)
                             if let mark = project.final_mark {
-                                Text("Final Mark: \(mark)")
+                                Text("Score: \(mark)")
                                     .font(.subheadline)
                                     .foregroundColor(.green)
                             } else {
-                                Text("Final Mark: None")
+                                Text("Score: None")
                                     .font(.subheadline)
                                     .foregroundColor(.red)
                             }
@@ -79,18 +79,17 @@ struct StudentView: View {
                 if let cursusUsers = user.data?.cursus_users {
                     ForEach(cursusUsers) { cursus in
                         if cursus.grade == nil {
-                            Text("PISCINE")
+                            Text("Piscine")
                                 .font(.title2)
                                 .bold()
                                 .padding(.top)
                         } else if cursus.grade == "Member" {
-                            Text("CURSUS")
+                            Text("Cursus")
                                 .font(.title2)
                                 .bold()
                                 .padding(.top)
                         }
 
-                        // Affichage des compétences pour chaque cursus
                         if let skills = cursus.skills {
                             ForEach(skills) { skill in
                                 HStack {
