@@ -12,38 +12,45 @@ struct BasicInformationsView: View {
     var user: UserAPI
 
     var body: some View {
-        HStack {
+        VStack(alignment: .leading) {
+            HStack(alignment: .center) {
                 AsyncImage(
-                    url: URL(string: user.data!.image.link!),
+                    url: URL(string: user.data?.image.link ?? ""),
                     content: { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: 100, maxHeight: 100)
+                            .frame(width: 120, height: 120)
                             .clipShape(Circle())
                     },
                     placeholder: {
                         ProgressView()
                     }
                 )
-            VStack(alignment: .leading) {
-                HStack(spacing: 40) {
-                    VStack(alignment: .leading){
-                        Text(login)
-                            .foregroundColor(.mainBlue)
-                            .bold()
-                        Text(location)
-                            .foregroundColor(.mainBlue)
-                            .bold()
-                        Text(coalition)
-                            .foregroundColor(.mainBlue)
-                            .bold()
-                    }
+                
+                VStack(alignment: .leading) {
+                    Text(login)
+                        .foregroundColor(.mainBlue)
+                        .font(.title2)
+                        .bold()
+                    Text("Level: \(level)")
+                        .foregroundColor(.red)
+                        .font(.headline)
+                    Text(location)
+                        .foregroundColor(.orderOrange)
+                        .font(.subheadline)
+                    Text(coalition)
+                        .foregroundColor(.indigo)
+                        .font(.subheadline)
                 }
-                ProgressBarView(color: .blue, level: level[0], levelCompletion: level[1], isRounded: true)
+                .padding(.leading, 10)
             }
+            .padding([.top, .leading, .trailing], 10)
+            
+            Spacer() // Ajoute de l'espace sous le header pour la liste des projets
         }
         .padding(.horizontal, 10)
     }
+
     
     var login: String {
         guard let login = user.data?.login else {
@@ -66,24 +73,20 @@ struct BasicInformationsView: View {
         return coa
     }
     
-    var level: [Double] {
-        var currentLevelCompletion: Double = 0
-        var currentLevel: Double = 0
-        
-        guard let cursus: [Progress] = user.data?.cursus_users else {
-            print("error")
-            return ([currentLevel, currentLevelCompletion])
+    var level: String {
+        guard let cursus = user.data?.cursus_users else {
+            print("Error: No cursus data available")
+            return "0"
         }
-        if (cursus.count > 1) {
-            for i in 0...cursus.count - 1 {
-                if (cursus[i].grade != nil) {
-                    currentLevelCompletion = cursus[i].level.truncatingRemainder(dividingBy: 1)
-                    currentLevel = cursus[i].level - currentLevelCompletion
-                }
+        for cursus in cursus {
+            if cursus.grade != nil {
+                let level = cursus.level
+                return String(format: "%.2f", level)
             }
         }
-        return ([currentLevel, currentLevelCompletion * 100])
+        return "0"
     }
+
 }
 
 //struct BasicInformationsView_Previews: PreviewProvider {
