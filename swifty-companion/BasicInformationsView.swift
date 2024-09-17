@@ -31,8 +31,10 @@ struct BasicInformationsView: View {
                         Text(login)
                             .foregroundColor(.mainBlue)
                             .bold()
-//                            .textCase(.uppercase)
                         Text(location)
+                            .foregroundColor(.mainBlue)
+                            .bold()
+                        Text(coalition)
                             .foregroundColor(.mainBlue)
                             .bold()
                     }
@@ -45,16 +47,23 @@ struct BasicInformationsView: View {
     
     var login: String {
         guard let login = user.data?.login else {
-            return "Cartman"
+            return "Unknow"
         }
         return login
     }
     
     var location: String {
         guard let location = user.data?.location else {
-            return "South Park"
+            return "Somewhere in 42 campus"
         }
         return location
+    }
+    
+    var coalition: String {
+        guard let coa = user.coalition?.name else {
+            return "Unknow Coalition"
+        }
+        return coa
     }
     
     var level: [Double] {
@@ -77,8 +86,8 @@ struct BasicInformationsView: View {
     }
 }
 
-struct BasicInformationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BasicInformationsView(user: UserAPI.mockUser)
-    }
-}
+//struct BasicInformationsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BasicInformationsView(user: UserAPI.mockUser)
+//    }
+//}

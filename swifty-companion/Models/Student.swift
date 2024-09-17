@@ -43,3 +43,12 @@ struct Project: Codable, Identifiable {
 struct ProjectName: Codable {
     var name: String
 }
+
+struct Titles: Codable {
+    var name: [String]
+}
+
+struct Coalition: Codable {
+    var id: Int
+    var name: String
+}
