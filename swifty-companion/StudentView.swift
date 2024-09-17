@@ -20,7 +20,7 @@ struct StudentView: View {
                         content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 80, height: 80)
+                                .frame(maxWidth: 120, maxHeight: 120)
                                 .clipShape(Circle())
                                 .shadow(radius: 5)
                         },
@@ -28,7 +28,7 @@ struct StudentView: View {
                             ProgressView()
                         }
                     )
-                    
+
                     VStack(alignment: .leading) {
                         Text(login)
                             .foregroundColor(.black)
@@ -46,8 +46,6 @@ struct StudentView: View {
                     }
                     .padding(.leading, 10)
                 }
-                .padding([.top, .leading, .trailing], 10)
-
                 Text("Projects")
                     .font(.title2)
                     .bold()

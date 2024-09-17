@@ -53,8 +53,6 @@ class UserAPI: ObservableObject {
         do {
             data = try await getUserInfo(token: token, login: login)
             coalition = try await getUserCoalition(token: token, login: login)
-        } catch {
-            print("Error: Failde to get user info")
-        }
+        } catch {}
     }
 }

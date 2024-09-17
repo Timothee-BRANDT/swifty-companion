@@ -14,14 +14,18 @@ struct ContentView: View {
     @State private var showMessage: Bool = false
     @State private var message: String = ""
     @State private var navigateToStudentView = false
-    
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 50) {
                 TextField("Type a student login", text: $loginSelected)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                
+                    .onSubmit {
+                        Task {
+                            await performSearch()
+                        }
+                    }
                 Button(action: {
                     Task {
                         await performSearch()
@@ -33,6 +37,7 @@ struct ContentView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .font(.title2)
                 }
                 .padding(.horizontal)
                 
@@ -42,9 +47,10 @@ struct ContentView: View {
                         .padding()
                         .transition(.opacity)
                         .animation(.easeInOut, value: showMessage)
+                        .font(.title2)
                 } else {
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 70)
                 }
             }
             .padding()
