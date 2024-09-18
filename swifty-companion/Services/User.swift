@@ -45,6 +45,10 @@ class UserAPI: ObservableObject {
         let (data, _) = try await URLSession.shared.data(for: request)
         let decoder = JSONDecoder()
         let currentUserCoalition = try decoder.decode([Coalition].self, from: data)
+        guard !currentUserCoalition.isEmpty else {
+            return nil
+        }
+        
         return currentUserCoalition[0]
     }
 

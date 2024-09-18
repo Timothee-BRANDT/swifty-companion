@@ -83,13 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		220C31A02C983A7E00AF5C87 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		22A20BEB2C98359E0062DB66 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +106,6 @@
 		22A20BF62C98359F0062DB66 /* swifty-companion */ = {
 			isa = PBXGroup;
 			children = (
-				220C31A02C983A7E00AF5C87 /* Views */,
 				22A20C232C9836340062DB66 /* Services */,
 				22A20C222C9836270062DB66 /* Models */,
 				22A20BF72C98359F0062DB66 /* swifty_companionApp.swift */,
